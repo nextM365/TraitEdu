@@ -1,0 +1,32 @@
+{
+  "settings": {
+    "title": "Settings",
+    "headline": "Customize your experience",
+    "subtitle": "Choose your preferred appearance and app behavior from one place.",
+    "appearance": "Appearance Mode",
+    "theme": "Theme Palette",
+    "language": "Language",
+    "options": {
+      "changeLanguage": "Change Language",
+      "notifications": "Notification Preferences",
+      "address": "Address",
+      "privacy": "Privacy Policy",
+      "help": "Help Center",
+      "logoutOne": "Log out of only this Account",
+      "logoutAll": "Log out of all Accounts",
+      "legal": "Legal & App Info"
+    }
+  },
+  "theme": {
+    "purple": "Purple",
+    "teal": "Teal",
+    "orange": "Orange",
+    "blue": "Blue"
+  },
+  "languageNames": {
+    "en": "English",
+    "te": "Telugu",
+    "kn": "Kannada",
+    "hi": "Hindi"
+  }
+}
