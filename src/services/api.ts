@@ -1,8 +1,10 @@
 import type { AuthSession, AuthUser, DashboardData, SchoolData, SchoolOption, StudentFeedback, Teacher, Student } from '../types';
+import { getApiUrl } from '../config/api';
 
 async function fetchJson<T>(path: string): Promise<T> {
   const token = window.localStorage.getItem('traitedu-token');
-  const response = await fetch(path, {
+  const url = getApiUrl(path);
+  const response = await fetch(url, {
     headers: token ? { Authorization: `Bearer ${token}` } : undefined,
   });
   if (!response.ok) {
@@ -16,7 +18,8 @@ export function fetchSchools(): Promise<SchoolOption[]> {
 }
 
 export async function login(schoolId: string, branchId: string, userId: string, password: string): Promise<AuthSession> {
-  const response = await fetch('/api/auth/login', {
+  const url = getApiUrl('/api/auth/login');
+  const response = await fetch(url, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ schoolId, branchId, userId, password }),
@@ -33,7 +36,8 @@ export function fetchCurrentUser(): Promise<AuthUser> {
 export async function logout(): Promise<void> {
   const token = window.localStorage.getItem('traitedu-token');
   if (token) {
-    await fetch('/api/auth/logout', {
+    const url = getApiUrl('/api/auth/logout');
+    await fetch(url, {
       method: 'POST',
       headers: { Authorization: `Bearer ${token}` },
     });
@@ -62,7 +66,8 @@ export function fetchAdminContent(): Promise<Record<string, unknown>> {
 
 export async function updateAdminContent(moduleName: string, content: unknown): Promise<void> {
   const token = window.localStorage.getItem('traitedu-token');
-  const response = await fetch(`/api/admin/content/${moduleName}`, {
+  const url = getApiUrl(`/api/admin/content/${moduleName}`);
+  const response = await fetch(url, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
@@ -81,7 +86,8 @@ export async function updateTeacherAdminContent(
   credentials: { teacherId: string; loginId: string; password?: string; enabled: boolean },
 ): Promise<void> {
   const token = window.localStorage.getItem('traitedu-token');
-  const response = await fetch('/api/admin/content/teachers', {
+  const url = getApiUrl('/api/admin/content/teachers');
+  const response = await fetch(url, {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
     body: JSON.stringify({ content, credentials }),
@@ -98,7 +104,8 @@ export function fetchFeedback(): Promise<StudentFeedback[]> {
 
 export async function submitFeedback(message: string): Promise<void> {
   const token = window.localStorage.getItem('traitedu-token');
-  const response = await fetch('/api/feedback', {
+  const url = getApiUrl('/api/feedback');
+  const response = await fetch(url, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
     body: JSON.stringify({ message }),
