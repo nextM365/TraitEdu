@@ -24,6 +24,17 @@ A React + Node.js school dashboard prototype with separate frontend components a
 3. Open the Vite app at:
    `http://localhost:5173`
 
+## Login troubleshooting
+
+The login page requires both the frontend and API server. Start them together with:
+
+```bash
+npm run dev
+```
+
+If the school list reports that the server is offline, confirm the API is available at
+`http://localhost:4000/api/auth/schools`, then refresh the login page.
+
 ## Good architecture suggestions
 
 - Keep UI state in React and fetch data from the server via REST or GraphQL.

@@ -4,8 +4,14 @@ import {
   fetchSchool,
   fetchStudents,
   fetchTeachers,
+  fetchCurrentUser,
+  logout,
 } from './services/api.ts';
-import type { DashboardData, SchoolData, Student, Teacher } from './types';
+import type { AuthSession, AuthUser, DashboardData, SchoolData, Student, Teacher } from './types';
+import LoginView from './components/LoginView.tsx';
+import AdminContentManager from './components/AdminContentManager.tsx';
+import TeacherWorkspace from './components/TeacherWorkspace.tsx';
+import GlobalAdminManager from './components/GlobalAdminManager.tsx';
 import SchoolView from './components/SchoolView.tsx';
 import TeacherView from './components/TeacherView.tsx';
 import StudentView from './components/StudentView.tsx';
@@ -26,17 +32,17 @@ import SpotlightView from './components/SpotlightView.tsx';
 import i18n from './i18n';
 
 const features = [
-  { label: 'Announcements', image: 'https://images.unsplash.com/photo-1525009330692-5a5f6d2d2726?auto=format&fit=crop&w=600&q=80' },
-  { label: 'Achievements', image: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=600&q=80' },
-  { label: 'Exam Results', image: 'https://images.unsplash.com/photo-1574680096145-72f07f6b8c48?auto=format&fit=crop&w=600&q=80' },
-  { label: 'Fee Payments', image: 'https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=600&q=80' },
-  { label: 'Attendance', image: 'https://images.unsplash.com/photo-1520697222860-76fefe7a51fc?auto=format&fit=crop&w=600&q=80' },
-  { label: 'Opinion Poll', image: 'https://images.unsplash.com/photo-1579370318444-bb5a14c48ef2?auto=format&fit=crop&w=600&q=80' },
-  { label: 'Parent Concerns', image: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=600&q=80' },
-  { label: 'Bus Tracking', image: 'https://images.unsplash.com/photo-1496950866446-325a2cdc18f9?auto=format&fit=crop&w=600&q=80' },
-  { label: 'Wellness', image: 'https://images.unsplash.com/photo-1514996937319-344454492b37?auto=format&fit=crop&w=600&q=80' },
-  { label: 'Gate Pass', image: 'https://images.unsplash.com/photo-1519338701440-74e0b3c14d3d?auto=format&fit=crop&w=600&q=80' },
-  { label: 'Events & Gallery', image: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=600&q=80' },
+  { label: 'Announcements', image: '/announcement-icon.svg' },
+  { label: 'Achievements', image: '/achievements-icon.svg' },
+  { label: 'Exam Results', image: '/exam-results-icon.svg' },
+  { label: 'Fee Payments', image: '/fee-payments-icon.svg' },
+  { label: 'Attendance', image: '/attendance-icon.svg' },
+  { label: 'Opinion Poll', image: '/opinion-poll-icon.svg' },
+  { label: 'Parent Concerns', image: '/parent-concerns-icon.svg' },
+  { label: 'Bus Tracking', image: '/bus-tracking-icon.svg' },
+  { label: 'Wellness', image: '/wellness-icon.svg' },
+  { label: 'Gate Pass', image: '/gate-pass-icon.svg' },
+  { label: 'Events & Gallery', image: '/events-gallery-icon.svg' },
 ];
 
 const modules = [
@@ -65,6 +71,8 @@ type Language = 'en' | 'te' | 'kn' | 'hi';
 type ModuleView = (typeof modules)[number]['value'];
 
 export default function App() {
+  const [user, setUser] = useState<AuthUser | null>(null);
+  const [authLoading, setAuthLoading] = useState(true);
   const [dashboard, setDashboard] = useState<DashboardData | null>(null);
   const [activeSidebar, setActiveSidebar] = useState('Spotlight');
   const [school, setSchool] = useState<SchoolData | null>(null);
@@ -77,6 +85,8 @@ export default function App() {
   const [language, setLanguage] = useState<Language>('en');
   const [activeView, setActiveView] = useState<ModuleView>('home');
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const isGlobalAdmin = user?.role === 'global_admin';
+  const isAdmin = isGlobalAdmin || user?.role === 'branch_admin' || user?.role === 'school_admin';
 
   useEffect(() => {
     const savedTheme = window.localStorage.getItem('traitedu-theme') as ThemePalette | null;
@@ -86,6 +96,24 @@ export default function App() {
     if (savedAppearance) setAppearance(savedAppearance);
     if (savedLanguage) setLanguage(savedLanguage);
 
+  }, []);
+
+  useEffect(() => {
+    const token = window.localStorage.getItem('traitedu-token');
+    if (!token) {
+      setAuthLoading(false);
+      return;
+    }
+    fetchCurrentUser()
+      .then(setUser)
+      .catch(() => window.localStorage.removeItem('traitedu-token'))
+      .finally(() => setAuthLoading(false));
+  }, []);
+
+  useEffect(() => {
+    if (!user) return;
+    setLoading(true);
+    setError(null);
     Promise.all([fetchDashboard(), fetchSchool(), fetchTeachers(), fetchStudents()])
       .then(([dashboardData, schoolData, teachersData, studentsData]) => {
         setDashboard(dashboardData);
@@ -98,7 +126,7 @@ export default function App() {
         setError('Unable to load dashboard data.');
       })
       .finally(() => setLoading(false));
-  }, []);
+  }, [user]);
 
   useEffect(() => {
     window.localStorage.setItem('traitedu-theme', theme);
@@ -122,6 +150,29 @@ export default function App() {
     setActiveSidebar('Home');
     setActiveView('home');
   };
+
+  const handleLogin = (session: AuthSession) => {
+    window.localStorage.setItem('traitedu-token', session.token);
+    setUser(session.user);
+  };
+
+  const handleLogout = async () => {
+    try { await logout(); } finally {
+      window.localStorage.removeItem('traitedu-token');
+      setUser(null);
+      setDashboard(null);
+      setSchool(null);
+      setTeachers([]);
+      setStudents([]);
+      setLoading(true);
+    }
+  };
+
+  if (authLoading) {
+    return <main className="container centered-screen"><div className="loader-card"><p>Checking your session…</p></div></main>;
+  }
+
+  if (!user) return <LoginView onLogin={handleLogin} />;
 
   if (loading) {
     return (
@@ -151,8 +202,8 @@ export default function App() {
           <div className="sidebar-header">
             <div className="sidebar-avatar"></div>
             <div>
-              <p className="sidebar-name">Jyohan Naidu Girinadhuni</p>
-              <p className="sidebar-subtext">5996024 · eCHAMPS</p>
+              <p className="sidebar-name">{user.name}</p>
+              <p className="sidebar-subtext">{isGlobalAdmin ? 'Global admin' : isAdmin ? 'Branch admin' : user.role === 'teacher' ? 'Teacher' : user.id} · {user.branchName}</p>
             </div>
           </div>
 
@@ -178,15 +229,19 @@ export default function App() {
               ☰ Menu
             </button>
           </div>
+          <div className="session-bar">
+            <span>{user.tenantName} · {user.schoolName} · {user.branchName} · {isGlobalAdmin ? 'Global administrator' : isAdmin ? 'Branch administrator' : user.role === 'teacher' ? 'Teacher' : 'Student'}</span>
+            <button type="button" onClick={handleLogout}>Sign out</button>
+          </div>
           <header className="student-header">
             <div className="student-profile-card">
               <div className="profile-avatar"></div>
               <div className="profile-info">
                 <p className="greeting">Good afternoon,</p>
-                <h1>Jyohan Naidu Girinadhuni</h1>
-                <p className="subtext">S/O G Mallikarjuna</p>
-                <p className="subtext id-text">5996024</p>
-                <p className="subtext school-code">E-CHAMPS-1 · NA · REGULAR · CONC · 6011</p>
+                <h1>{user.name}</h1>
+                {user.student?.parentName && <p className="subtext">Parent: {user.student.parentName}</p>}
+                <p className="subtext id-text">{user.id}</p>
+                <p className="subtext school-code">{user.schoolCode} · {user.branchCode} · {isGlobalAdmin ? 'GLOBAL ADMIN' : isAdmin ? 'BRANCH ADMIN' : user.role === 'teacher' ? `${user.teacher?.subject.toUpperCase()} · ${user.teacher?.assignments.map(item => `${item.className}-${item.section}`).join(', ')}` : `CLASS ${user.student?.className} · SECTION ${user.student?.section}`}</p>
               </div>
             </div>
 
@@ -289,7 +344,7 @@ export default function App() {
             </div>
           ) : activeSidebar === 'Exam Results' ? (
             <div className="container module-panel">
-              <ExamResults results={dashboard.examResults} />
+              <ExamResults results={dashboard.examResults} management={dashboard.examManagement} user={user} school={school} />
             </div>
           ) : activeSidebar === 'Fees' ? (
             <div className="container module-panel">
@@ -317,7 +372,9 @@ export default function App() {
           ) : (
             <div className="container module-panel">
               {activeView === 'home' && (
-                <>
+                isGlobalAdmin ? <GlobalAdminManager /> :
+                isAdmin ? <AdminContentManager /> :
+                user.role === 'teacher' ? <TeacherWorkspace user={user} students={students} /> : <>
                   <section className="dashboard-grid">
                     {dashboard.summary.map(metric => (
                       <article key={metric.title} className="metric-card">
@@ -378,12 +435,12 @@ export default function App() {
 
               {activeView === 'school' && <SchoolView school={school} />}
               {activeView === 'teachers' && <TeacherView teachers={teachers} />}
-              {activeView === 'students' && <StudentView students={students} />}
+              {activeView === 'students' && <StudentView students={students} role={user.role} />}
             </div>
           )}
 
           <footer className="student-footer">
-            Student dashboard with module-level views for school, teachers, and students.
+            {isGlobalAdmin ? 'Global administration dashboard' : isAdmin ? 'Branch administration dashboard' : user.role === 'teacher' ? 'Teacher dashboard' : 'Student dashboard'} · {user.schoolName} · {user.branchName}
           </footer>
         </section>
       </div>

@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title">
+  <title id="title">Wellness and Mindfulness</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff7a13"/><stop offset=".48" stop-color="#f05a17"/>
+      <stop offset=".49" stop-color="#2083c9"/><stop offset="1" stop-color="#15559d"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffe36a"/><stop offset="1" stop-color="#e88a16"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#172554" flood-opacity=".25"/>
+    </filter>
+  </defs>
+  <rect x="30" y="30" width="452" height="452" rx="108" fill="#fff" filter="url(#shadow)"/>
+  <rect x="43" y="43" width="426" height="426" rx="96" fill="url(#bg)" stroke="#fff1c7" stroke-width="10"/>
+  <g transform="translate(195 74)" stroke="#17385f" stroke-width="7">
+    <circle cx="61" cy="61" r="58" fill="#fff8db"/>
+    <path d="M61 18v45l28 18" fill="none" stroke-linecap="round"/>
+    <path d="M61 4v13M61 105v13M4 61h13M105 61h13" fill="none" stroke-width="5"/>
+  </g>
+  <g transform="translate(112 216) rotate(-7)" stroke="#17385f" stroke-width="8" stroke-linejoin="round">
+    <rect width="112" height="126" fill="#f0dfb7"/>
+    <rect x="13" y="14" width="86" height="92" fill="#fff8dc"/>
+    <circle cx="56" cy="42" r="12" fill="#d99367"/>
+    <path d="M40 58c4 19 6 26 16 35 10-9 12-16 16-35M32 91c15-17 33-17 48 0M38 75l-21 20M74 75l21 20" fill="none" stroke="#3c766c" stroke-width="6" stroke-linecap="round"/>
+    <path d="M78 24c10-13 22-3 14 8-5 7-10 7-12 15" fill="none" stroke="#f2b72e" stroke-width="5"/>
+  </g>
+  <g transform="translate(199 190)" stroke="#17385f" stroke-width="9" stroke-linejoin="round">
+    <path d="M0 0h114l17 18v133l-17 18H0l-17-18V18z" fill="#fff3cd"/>
+    <path d="M57 42c21-31 68-4 58 31-8 28-58 60-58 60S7 101-1 73c-10-35 37-62 58-31z" fill="#e77d42"/>
+    <path d="M57 57l9 18 21 3-15 15 4 21-19-10-19 10 4-21-15-15 21-3z" fill="url(#gold)"/>
+  </g>
+  <g transform="translate(322 224) rotate(7)" stroke="#17385f" stroke-width="8" stroke-linejoin="round">
+    <rect width="112" height="127" fill="#f0dfb7"/>
+    <rect x="13" y="14" width="86" height="92" fill="#fff8dc"/>
+    <path d="M26 91h68" fill="none" stroke="#7eaa68" stroke-width="6"/>
+    <path d="M43 91V54h18v37M62 91V64h24v27" fill="#d9954c"/>
+    <path d="M27 56c7-18 20-18 27 0M68 47c7-18 20-18 27 0" fill="#d65339"/>
+    <rect x="19" y="22" width="17" height="40" rx="5" fill="#5ba2ce"/>
+    <path d="M23 14h9v9h-9z" fill="#d8f4ff"/>
+  </g>
+  <g fill="#6aa865" stroke="#315c3b" stroke-width="4">
+    <ellipse cx="103" cy="248" rx="10" ry="24" transform="rotate(-43 103 248)"/>
+    <ellipse cx="92" cy="282" rx="10" ry="24" transform="rotate(-65 92 282)"/>
+    <ellipse cx="111" cy="318" rx="10" ry="24" transform="rotate(-57 111 318)"/>
+    <ellipse cx="409" cy="248" rx="10" ry="24" transform="rotate(43 409 248)"/>
+    <ellipse cx="420" cy="282" rx="10" ry="24" transform="rotate(65 420 282)"/>
+    <ellipse cx="401" cy="318" rx="10" ry="24" transform="rotate(57 401 318)"/>
+  </g>
+  <g transform="translate(82 351)" stroke="#17385f" stroke-width="7" stroke-linejoin="round">
+    <path d="M0 10l174-20 174 20-24 38 13 41-163-16L12 89l13-41z" fill="url(#gold)"/>
+    <text x="174" y="48" fill="#17385f" stroke="none" font-family="Arial" font-size="39" font-weight="800" text-anchor="middle">WELLNESS</text>
+    <text x="174" y="78" fill="#17385f" stroke="none" font-family="Arial" font-size="17" font-weight="800" text-anchor="middle">&amp; MINDFULNESS</text>
+  </g>
+  <g fill="#78bf65" stroke="#17385f" stroke-width="5">
+    <path d="M103 116l9 18 20 3-15 15 4 21-18-10-19 10 4-21-15-15 21-3z"/>
+    <path d="M408 116l9 18 20 3-15 15 4 21-18-10-19 10 4-21-15-15 21-3z" fill="#f2c742"/>
+  </g>
+</svg>

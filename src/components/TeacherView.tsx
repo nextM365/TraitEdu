@@ -13,6 +13,9 @@ export default function TeacherView({ teachers }: Props) {
           <tr>
             <th>Name</th>
             <th>Subject</th>
+            <th>Specializations</th>
+            <th>Classes</th>
+            <th>Duties</th>
             <th>Email</th>
           </tr>
         </thead>
@@ -21,6 +24,9 @@ export default function TeacherView({ teachers }: Props) {
             <tr key={teacher.email}>
               <td>{teacher.name}</td>
               <td>{teacher.subject}</td>
+              <td>{teacher.specializations.join(', ')}</td>
+              <td>{teacher.assignments.map(item => `${item.className}-${item.section}`).join(', ')}</td>
+              <td>{teacher.duties.join(', ')}</td>
               <td>{teacher.email}</td>
             </tr>
           ))}
