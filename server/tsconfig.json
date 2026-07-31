@@ -7,9 +7,11 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "strict": true,
-    "noEmit": false,
-    "outDir": "../dist/server",
-    "types": ["node"]
+    "noEmit": true,
+    "types": ["node"],
+    "skipLibCheck": true,
+    "esModuleInterop": true
   },
-  "include": ["**/*.ts"]
+  "include": ["**/*.ts"],
+  "exclude": ["node_modules", "dist", "**/*.js"]
 }
