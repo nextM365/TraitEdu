@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title">
+  <title id="title">Attendance</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#ff4f1f"/><stop offset=".45" stop-color="#ff8427"/>
+      <stop offset=".46" stop-color="#267dd2"/><stop offset="1" stop-color="#43a6ee"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff08a"/><stop offset=".5" stop-color="#fbc43c"/><stop offset="1" stop-color="#d98212"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#172554" flood-opacity=".25"/>
+    </filter>
+  </defs>
+  <rect x="30" y="30" width="452" height="452" rx="108" fill="#fff" filter="url(#shadow)"/>
+  <rect x="43" y="43" width="426" height="426" rx="96" fill="url(#bg)" stroke="#ffd078" stroke-width="10"/>
+  <path d="M168 211c12-62 48-93 88-93s76 31 88 93v156H168z" fill="#fff2c5" stroke="#75471e" stroke-width="9"/>
+  <path d="M193 208c10-42 33-64 63-64 31 0 54 22 64 64" fill="none" stroke="#bb7d35" stroke-width="7"/>
+  <text x="256" y="181" fill="#9a6526" font-family="Arial, sans-serif" font-size="24" font-weight="800" text-anchor="middle">ATTENDANCE</text>
+  <g transform="translate(73 89)" stroke="#193b70" stroke-width="7" stroke-linejoin="round">
+    <rect width="85" height="82" rx="12" fill="#eff8ff"/>
+    <path d="M0 24h85M18 0v19M65 0v19" fill="none" stroke-linecap="round"/>
+    <g fill="#68a9cf" stroke="none">
+      <rect x="15" y="35" width="12" height="12" rx="2"/><rect x="35" y="35" width="12" height="12" rx="2"/><rect x="55" y="35" width="12" height="12" rx="2"/>
+      <rect x="15" y="55" width="12" height="12" rx="2"/><rect x="35" y="55" width="12" height="12" rx="2"/><rect x="55" y="55" width="12" height="12" rx="2" fill="#f47b32"/>
+    </g>
+  </g>
+  <g transform="translate(346 84)" stroke="#193b70" stroke-width="7" stroke-linejoin="round">
+    <path d="M0 10l48 9 31-8v82l-35 8-44-9z" fill="#fff5d4"/>
+    <path d="M44 19v82M10 31l25 5M10 46l25 5M54 32l16-4M54 47l16-4" fill="none" stroke-width="4"/>
+    <text x="18" y="23" fill="#385d3a" stroke="none" font-family="Arial" font-size="10">Register</text>
+    <text x="61" y="26" fill="#21834d" stroke="none" font-family="Arial" font-size="20" font-weight="800">P</text>
+  </g>
+  <g stroke="#193b70" stroke-width="8" stroke-linejoin="round">
+    <g transform="translate(102 215)">
+      <circle cx="81" cy="42" r="39" fill="#f4ad75"/>
+      <path d="M42 38c4-41 70-55 81-5-21-16-43-10-62-2z" fill="#653821"/>
+      <path d="M47 79l-26 65 32 11 12-37 3 95h57l-3-94 16 35 29-17-31-59z" fill="#3c79aa"/>
+      <path d="M68 82l15 31 17-31" fill="#fff"/>
+      <path d="M55 210l-18 38M119 210l18 38" fill="none" stroke-linecap="round"/>
+      <path d="M36 248h35M119 248h35" fill="none" stroke-linecap="round"/>
+      <circle cx="69" cy="45" r="4" fill="#193b70" stroke="none"/><circle cx="94" cy="45" r="4" fill="#193b70" stroke="none"/>
+      <path d="M72 61c8 7 16 7 24 0" fill="none" stroke-width="4" stroke-linecap="round"/>
+    </g>
+    <g transform="translate(275 219)">
+      <circle cx="65" cy="40" r="38" fill="#8b4b2d"/>
+      <path d="M27 37c4-40 67-53 77-4-20-15-42-10-59-2z" fill="#513024"/>
+      <path d="M32 77L8 151l31 9 11-38-1 87h58l-4-87 16 35 29-18-33-62z" fill="#416f9e"/>
+      <path d="M50 80l15 30 17-30" fill="#fff"/>
+      <path d="M48 207l-15 38M103 207l20 38" fill="none" stroke-linecap="round"/>
+      <path d="M28 245h35M105 245h35" fill="none" stroke-linecap="round"/>
+      <circle cx="54" cy="43" r="4" fill="#193b70" stroke="none"/><circle cx="78" cy="43" r="4" fill="#193b70" stroke="none"/>
+      <path d="M56 59c8 7 16 7 23 0" fill="none" stroke-width="4" stroke-linecap="round"/>
+    </g>
+  </g>
+  <g transform="translate(190 316)" stroke="#193b70" stroke-width="8" stroke-linejoin="round">
+    <path d="M66 0l17 17 25-7 8 25 25 8-8 25 17 18-17 18 8 25-25 8-8 25-25-7-17 17-18-17-25 7-8-25-25-8 8-25-17-18 17-18-8-25 25-8 8-25 25 7z" fill="url(#gold)"/>
+    <text x="66" y="75" fill="#8b5b18" stroke="none" font-family="Arial" font-size="23" font-weight="800" text-anchor="middle">DAILY</text>
+    <text x="66" y="97" fill="#8b5b18" stroke="none" font-family="Arial" font-size="13" font-weight="700" text-anchor="middle">ATTENDANCE</text>
+  </g>
+  <g fill="none" stroke="#ffe173" stroke-width="9" stroke-linecap="round">
+    <path d="M91 210l13 13 25-29M391 213l13 13 25-29M91 333l13 13 25-29M393 330l13 13 25-29"/>
+  </g>
+</svg>

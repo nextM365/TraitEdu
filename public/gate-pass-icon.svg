@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title">
+  <title id="title">Gate Pass</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff7a13"/><stop offset=".48" stop-color="#f05a17"/>
+      <stop offset=".49" stop-color="#2083c9"/><stop offset="1" stop-color="#15559d"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffe36a"/><stop offset="1" stop-color="#e88a16"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#172554" flood-opacity=".25"/>
+    </filter>
+  </defs>
+  <rect x="30" y="30" width="452" height="452" rx="108" fill="#fff" filter="url(#shadow)"/>
+  <rect x="43" y="43" width="426" height="426" rx="96" fill="url(#bg)" stroke="#fff1c7" stroke-width="10"/>
+  <g transform="translate(76 76) rotate(-9)" stroke="#17385f" stroke-width="7" stroke-linejoin="round">
+    <rect width="86" height="131" rx="14" fill="#274d65"/>
+    <rect x="9" y="12" width="68" height="100" rx="7" fill="#eaf5dc"/>
+    <path d="M19 97l15-29 19 7 15-34M24 25l20 18 24-17" fill="none" stroke="#e0ac4d" stroke-width="7"/>
+    <path d="M45 34c12 0 20 9 20 20 0 16-20 34-20 34S25 70 25 54c0-11 8-20 20-20z" fill="#f4772d"/>
+    <text x="45" y="62" fill="#17385f" stroke="none" font-family="Arial" font-size="20" font-weight="800" text-anchor="middle">G</text>
+  </g>
+  <g transform="translate(171 93)" stroke="#17385f" stroke-width="7">
+    <circle cx="85" cy="82" r="76" fill="#f5e5bd"/>
+    <circle cx="85" cy="82" r="61" fill="#fff5d7"/>
+    <path d="M85 22v120M25 82h120M42 39l86 86M128 39l-86 86" opacity=".45"/>
+    <path d="M85 36l16 39 37 7-37 8-16 38-9-38-43-8 43-7z" fill="#2d92c9"/>
+    <path d="M85 53c14 0 24 11 24 24 0 19-24 42-24 42S61 96 61 77c0-13 10-24 24-24z" fill="#f1a329"/>
+    <text x="85" y="84" fill="#17385f" stroke="none" font-family="Arial" font-size="20" font-weight="800" text-anchor="middle">G</text>
+  </g>
+  <g transform="translate(357 80)" stroke="#17385f" stroke-width="7">
+    <circle cx="45" cy="45" r="41" fill="#fff0c5"/>
+    <path d="M45 16v31l21 13" fill="none" stroke-linecap="round"/>
+    <text x="45" y="103" fill="#f5edd7" stroke="none" font-family="Arial" font-size="13" font-weight="700" text-anchor="middle">VALID</text>
+  </g>
+  <g transform="translate(122 213)" stroke="#17385f" stroke-width="8" stroke-linejoin="round">
+    <rect x="0" y="0" width="68" height="117" rx="12" fill="#506f7d"/>
+    <rect x="10" y="14" width="48" height="62" fill="#fff"/>
+    <path d="M16 20h12v12H16zM39 20h12v12H39zM16 43h12v12H16zM35 39h7v7h-7zM43 50h8v8h-8zM22 62h8v8h-8z" fill="#17385f" stroke="none"/>
+    <path d="M34 8v-20h135v28" fill="none" stroke="#f2b233" stroke-width="13" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(276 203)" stroke="#17385f" stroke-width="8" stroke-linejoin="round">
+    <rect width="93" height="132" rx="15" fill="#335f78"/>
+    <rect x="12" y="14" width="69" height="86" rx="5" fill="#fff"/>
+    <path d="M20 22h16v16H20zM57 22h16v16H57zM20 59h16v16H20zM42 44h9v9h-9zM56 55h9v9h-9zM44 70h8v8h-8zM64 72h9v9h-9z" fill="#17385f" stroke="none"/>
+    <path d="M20 114h53" fill="none" stroke="#8bb5c5" stroke-width="5"/>
+  </g>
+  <g transform="translate(84 345)" stroke="#17385f" stroke-width="7" stroke-linejoin="round">
+    <path d="M0 10l172-20 172 20-24 38 13 41-161-16L12 89l13-41z" fill="url(#gold)"/>
+    <text x="172" y="43" fill="#17385f" stroke="none" font-family="Arial" font-size="38" font-weight="800" text-anchor="middle">GATE PASS</text>
+    <text x="172" y="69" fill="#17385f" stroke="none" font-family="Arial" font-size="18" font-weight="700" text-anchor="middle">Digital Access</text>
+  </g>
+  <g transform="translate(394 216)" stroke="#17385f" stroke-width="7" stroke-linecap="round">
+    <path d="M0 24l15 15 31-38" fill="none" stroke="#68d65f"/>
+  </g>
+  <g fill="none" stroke="#d9f3ff" stroke-width="8" stroke-linecap="round">
+    <path d="M222 79c19-20 49-20 68 0M234 91c13-12 31-12 44 0"/>
+  </g>
+</svg>

@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title">
+  <title id="title">Events and Gallery</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff7a13"/><stop offset=".48" stop-color="#f05a17"/>
+      <stop offset=".49" stop-color="#2083c9"/><stop offset="1" stop-color="#15559d"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffe36a"/><stop offset="1" stop-color="#e88a16"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#172554" flood-opacity=".25"/>
+    </filter>
+  </defs>
+  <rect x="30" y="30" width="452" height="452" rx="108" fill="#fff" filter="url(#shadow)"/>
+  <rect x="43" y="43" width="426" height="426" rx="96" fill="url(#bg)" stroke="#fff1c7" stroke-width="10"/>
+  <g transform="translate(196 70)" stroke="#17385f" stroke-width="7" stroke-linejoin="round">
+    <rect width="120" height="125" rx="12" fill="#fff8dd"/>
+    <path d="M0 38h120" fill="none"/>
+    <path d="M24 0v27M94 0v27" fill="none" stroke-linecap="round"/>
+    <text x="60" y="31" fill="#fff" stroke="none" font-family="Arial" font-size="19" font-weight="800" text-anchor="middle">OCT</text>
+    <path d="M0 0h120v38H0z" fill="#e66e24" stroke="none"/>
+    <text x="60" y="88" fill="#17385f" stroke="none" font-family="Arial" font-size="51" font-weight="800" text-anchor="middle">26</text>
+    <path d="M16 103l10 10 18-23" fill="none" stroke="#4caf50" stroke-width="6"/>
+    <text x="72" y="112" fill="#17385f" stroke="none" font-family="Arial" font-size="14" font-weight="700" text-anchor="middle">EVENT</text>
+  </g>
+  <g transform="translate(119 217) rotate(-8)" stroke="#17385f" stroke-width="8" stroke-linejoin="round">
+    <rect width="107" height="122" fill="#f4e4ba"/>
+    <rect x="13" y="15" width="81" height="87" fill="#fff8dc"/>
+    <circle cx="54" cy="57" r="26" fill="#f1a22d"/>
+    <path d="M54 31l9 25 25 4-20 16 6 25-20-14-21 14 7-25-21-16 26-4z" fill="#2c8dbb" stroke-width="5"/>
+  </g>
+  <g transform="translate(286 216) rotate(8)" stroke="#17385f" stroke-width="8" stroke-linejoin="round">
+    <rect width="111" height="124" fill="#f4e4ba"/>
+    <rect x="13" y="15" width="85" height="88" fill="#fff8dc"/>
+    <g fill="#ee9830">
+      <circle cx="55" cy="50" r="12"/><circle cx="35" cy="56" r="10"/><circle cx="76" cy="56" r="10"/>
+      <path d="M34 91c0-27 42-27 42 0z"/><path d="M16 88c0-22 32-22 32 0z"/><path d="M65 88c0-22 32-22 32 0z"/>
+    </g>
+  </g>
+  <g transform="translate(202 200)" stroke="#17385f" stroke-width="9" stroke-linejoin="round">
+    <path d="M0 0h112l18 18v127l-18 18H0l-18-18V18z" fill="#fff4d0"/>
+    <path d="M56 30l13 25 28 4-20 20 5 28-26-13-25 13 5-28-20-20 28-4z" fill="url(#gold)"/>
+    <text x="56" y="78" fill="#17385f" stroke="none" font-family="Arial" font-size="22" font-weight="800" text-anchor="middle">i</text>
+    <text x="56" y="134" fill="#17385f" stroke="none" font-family="Arial" font-size="21" font-weight="800" text-anchor="middle">GALLERY</text>
+  </g>
+  <g fill="none" stroke="#17385f" stroke-width="8">
+    <path d="M109 338c76 36 219 35 294-5"/>
+    <path d="M107 325v47M129 335v47M157 345v46M382 330v47M355 340v47M327 346v46"/>
+  </g>
+  <g transform="translate(83 350)" stroke="#17385f" stroke-width="7" stroke-linejoin="round">
+    <path d="M0 10l173-20 171 20-24 38 13 41-161-16L12 89l13-41z" fill="url(#gold)"/>
+    <text x="172" y="48" fill="#17385f" stroke="none" font-family="Arial" font-size="39" font-weight="800" text-anchor="middle">EVENTS</text>
+    <text x="172" y="78" fill="#17385f" stroke="none" font-family="Arial" font-size="18" font-weight="800" text-anchor="middle">&amp; GALLERY</text>
+  </g>
+  <g fill="#f4c447" stroke="#17385f" stroke-width="5">
+    <path d="M103 117l8 16 18 3-13 13 3 18-16-9-16 9 3-18-13-13 18-3z"/>
+    <path d="M395 117l8 16 18 3-13 13 3 18-16-9-16 9 3-18-13-13 18-3z"/>
+  </g>
+</svg>

@@ -1,11 +1,12 @@
-import { useState, type FormEvent } from 'react';
+import { useState } from 'react';
+import { submitFeedback } from '../services/api';
 
 export default function FeedbackView() {
   const [feedback, setFeedback] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState('');
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (!feedback.trim()) {
       setError('Please provide your feedback.');
@@ -13,7 +14,12 @@ export default function FeedbackView() {
     }
 
     setError('');
-    setSubmitted(true);
+    try {
+      await submitFeedback(feedback);
+      setSubmitted(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Unable to submit feedback.');
+    }
   };
 
   const handleReset = () => {

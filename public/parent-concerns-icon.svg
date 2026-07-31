@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title">
+  <title id="title">Parent Concerns</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#ff4f1f"/><stop offset=".45" stop-color="#ff8427"/>
+      <stop offset=".46" stop-color="#267dd2"/><stop offset="1" stop-color="#43a6ee"/>
+    </linearGradient>
+    <linearGradient id="shield" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff9dd"/><stop offset=".5" stop-color="#e8c67d"/><stop offset="1" stop-color="#b8752f"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#172554" flood-opacity=".25"/>
+    </filter>
+  </defs>
+  <rect x="30" y="30" width="452" height="452" rx="108" fill="#fff" filter="url(#shadow)"/>
+  <rect x="43" y="43" width="426" height="426" rx="96" fill="url(#bg)" stroke="#ffd078" stroke-width="10"/>
+  <path d="M171 225c12-69 45-106 85-106s73 37 85 106" fill="#ead2a2" stroke="#75471e" stroke-width="9"/>
+  <text x="256" y="176" fill="#8b622d" font-family="Arial" font-size="26" font-weight="800" text-anchor="middle">CONCERN</text>
+  <g transform="translate(74 90)" stroke="#193b70" stroke-width="7" stroke-linejoin="round">
+    <path d="M0 9l66-9 15 102-66 9z" fill="#f2deb1"/>
+    <rect x="14" y="19" width="51" height="60" rx="8" fill="#f4f8ff"/>
+    <circle cx="40" cy="42" r="16" fill="#e2a276"/>
+    <path d="M19 77c7-20 35-20 43 0" fill="#3f739b"/>
+    <path d="M19 42c3-22 36-27 43-3-15-10-27-8-43 3z" fill="#6a4028"/>
+    <path d="M54 2l15-14 13 17-10 14" fill="#fff5d4"/>
+    <text x="67" y="5" fill="#193b70" stroke="none" font-family="Arial" font-size="23" font-weight="800">?</text>
+  </g>
+  <g transform="translate(345 81) rotate(7)" stroke="#704719" stroke-width="7" stroke-linejoin="round">
+    <path d="M0 0h90c-11 10-15 22-12 38l-10 92H-8L3 35C6 20 5 9 0 0z" fill="#f7e8bd"/>
+    <path d="M14 41h10M32 41h38M14 63h10M32 63h38M14 85h10M32 85h38" fill="none" stroke-width="4"/>
+    <text x="13" y="24" fill="#765125" stroke="none" font-family="Arial" font-size="9">Academic</text>
+  </g>
+  <g transform="translate(118 183)" stroke="#704719" stroke-width="10" stroke-linejoin="round">
+    <path d="M138 0c38 33 74 48 109 55v97c0 80-46 124-109 150C75 276 29 232 29 152V55c35-7 71-22 109-55z" fill="url(#shield)"/>
+    <path d="M138 23c31 26 60 39 88 46v78c0 64-36 99-88 122-52-23-88-58-88-122V69c28-7 57-20 88-46z" fill="#fff1c5" stroke-width="5"/>
+    <text x="138" y="116" fill="#7c5222" stroke="none" font-family="Arial" font-size="28" font-weight="800" text-anchor="middle">PARENT</text>
+    <text x="138" y="151" fill="#234875" stroke="none" font-family="Arial" font-size="28" font-weight="800" text-anchor="middle">CONCERNS</text>
+    <text x="138" y="179" fill="#7c5222" stroke="none" font-family="Arial" font-size="14" font-weight="700" text-anchor="middle">Feedback &amp;</text>
+    <text x="138" y="198" fill="#7c5222" stroke="none" font-family="Arial" font-size="14" font-weight="700" text-anchor="middle">Issue Resolution</text>
+    <path d="M95 224l-12 58 33-19 22 27 11-62" fill="#267bd1"/>
+  </g>
+  <g stroke="#704719" stroke-width="5">
+    <g fill="#ffd85b"><circle cx="91" cy="250" r="21"/><path d="M91 268v18M80 286h22" fill="none"/></g>
+    <g fill="#f4c54d"><circle cx="402" cy="250" r="20"/><circle cx="91" cy="337" r="20"/><circle cx="407" cy="395" r="16"/></g>
+  </g>
+  <g fill="#73491e" font-family="Arial" font-size="24" font-weight="800" text-anchor="middle">
+    <text x="402" y="258">☹</text><text x="91" y="345">☹</text><text x="407" y="402">☹</text>
+  </g>
+  <g transform="translate(367 327) rotate(10)" stroke="#193b70" stroke-width="6" stroke-linejoin="round">
+    <rect width="64" height="84" rx="7" fill="#fff8df"/>
+    <path d="M16 22h10M32 22h20M16 39h10M32 39h20M16 56h10M32 56h20" fill="none" stroke="#a06e31" stroke-width="4"/>
+  </g>
+</svg>

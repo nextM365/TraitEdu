@@ -1,10 +1,12 @@
 import { Router } from 'express';
-import schoolData from '../data/schoolData.js';
+import { schools, branches } from '../data/tenants.js';
 
 const router = Router();
 
 router.get('/', (req, res) => {
-  res.json(schoolData);
+  const school = schools.find(item => item.id === req.auth.schoolId);
+  const branch = branches.find(item => item.id === req.auth.branchId);
+  res.json({ ...school, branch });
 });
 
 export default router;

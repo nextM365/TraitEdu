@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title">
+  <title id="title">Fee Payments</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#ff4f1f"/>
+      <stop offset=".45" stop-color="#ff8427"/>
+      <stop offset=".46" stop-color="#267dd2"/>
+      <stop offset="1" stop-color="#43a6ee"/>
+    </linearGradient>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fffdf1"/>
+      <stop offset="1" stop-color="#ecd28d"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff08a"/>
+      <stop offset=".5" stop-color="#fbc43c"/>
+      <stop offset="1" stop-color="#d98212"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#172554" flood-opacity=".25"/>
+    </filter>
+  </defs>
+  <rect x="30" y="30" width="452" height="452" rx="108" fill="#fff" filter="url(#shadow)"/>
+  <rect x="43" y="43" width="426" height="426" rx="96" fill="url(#bg)" stroke="#ffd078" stroke-width="10"/>
+  <g transform="translate(140 224) rotate(8 110 90)" stroke="#193b70" stroke-width="8" stroke-linejoin="round">
+    <path d="M6 32l147-25 86 113-151 59-91-85z" fill="#d8c79c"/>
+    <path d="M4 17l147-25 86 113-151 59-91-85z" fill="#f7e8b8"/>
+    <path d="M1 0l145-30 86 111-150 62-90-84z" fill="url(#paper)"/>
+    <path d="M60 9l48-10 33 40-64 20z" fill="#d7e8ee"/>
+    <path d="M75 16l29-7 18 21-39 12zM81 21v18M94 18v18M107 15v17" fill="none" stroke-width="5"/>
+    <text x="51" y="91" fill="#b17819" stroke="none" font-family="Arial, sans-serif" font-size="29" font-weight="800">$ = $</text>
+  </g>
+  <g transform="translate(276 98) rotate(7 82 72)" stroke="#193b70" stroke-width="8" stroke-linejoin="round">
+    <path d="M0 0h151c-15 12-21 27-18 46l-15 118H-13L4 42c3-17 1-31-4-42z" fill="url(#paper)"/>
+    <path d="M0 0c22 0 31 15 27 41h124c4-22-4-36-21-41z" fill="#efd186"/>
+    <text x="69" y="51" fill="#92631d" stroke="none" font-family="Arial, sans-serif" font-size="23" font-weight="800" text-anchor="middle">School Fees</text>
+    <path d="M28 72h79M25 91h67M22 110h72" fill="none" stroke="#b17c2b" stroke-width="6"/>
+    <path d="M91 125l13 13 26-30" fill="none" stroke="#aa771e" stroke-width="8" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(251 247) rotate(10)" stroke="#193b70" stroke-width="8" stroke-linejoin="round">
+    <rect width="94" height="125" rx="13" fill="#365f83"/>
+    <rect x="13" y="13" width="68" height="31" rx="5" fill="#a8dbea"/>
+    <g fill="#b9c8d2" stroke-width="3">
+      <rect x="14" y="57" width="15" height="11" rx="3"/><rect x="39" y="57" width="15" height="11" rx="3"/><rect x="64" y="57" width="15" height="11" rx="3"/>
+      <rect x="14" y="76" width="15" height="11" rx="3"/><rect x="39" y="76" width="15" height="11" rx="3"/><rect x="64" y="76" width="15" height="11" rx="3"/>
+      <rect x="14" y="95" width="15" height="11" rx="3"/><rect x="39" y="95" width="15" height="11" rx="3"/><rect x="64" y="95" width="15" height="11" rx="3"/>
+    </g>
+    <rect x="14" y="95" width="15" height="11" rx="3" fill="#f26b3a"/><rect x="64" y="95" width="15" height="11" rx="3" fill="#6bd071"/>
+    <path d="M38 0v-18h55l17 18" fill="#f7f3df"/>
+  </g>
+  <g transform="translate(333 287)" stroke="#193b70" stroke-width="8" stroke-linejoin="round">
+    <path d="M29 92l-7 57 27-18 20 27 10-58" fill="#267bd1"/>
+    <path d="M79 91l12 58 22-25 29 15-15-58" fill="#174f9f"/>
+    <circle cx="79" cy="65" r="57" fill="url(#gold)"/>
+    <circle cx="79" cy="65" r="40" fill="none" stroke="#b47413"/>
+    <text x="79" y="76" fill="#94601b" stroke="none" font-family="Arial, sans-serif" font-size="27" font-weight="800" text-anchor="middle">Paid</text>
+  </g>
+  <g fill="url(#gold)" stroke="#a86616" stroke-width="5">
+    <circle cx="113" cy="166" r="19"/><circle cx="89" cy="230" r="13"/><circle cx="121" cy="383" r="17"/><circle cx="195" cy="417" r="17"/><circle cx="411" cy="221" r="15"/>
+  </g>
+</svg>

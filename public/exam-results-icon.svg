@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title">
+  <title id="title">Exam Results</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#ff4f1f"/>
+      <stop offset=".45" stop-color="#ff8427"/>
+      <stop offset=".46" stop-color="#267dd2"/>
+      <stop offset="1" stop-color="#43a6ee"/>
+    </linearGradient>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fffbed"/>
+      <stop offset="1" stop-color="#f3d991"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff08a"/>
+      <stop offset=".5" stop-color="#fbc43c"/>
+      <stop offset="1" stop-color="#d98212"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#172554" flood-opacity=".25"/>
+    </filter>
+  </defs>
+  <rect x="30" y="30" width="452" height="452" rx="108" fill="#fff" filter="url(#shadow)"/>
+  <rect x="43" y="43" width="426" height="426" rx="96" fill="url(#bg)" stroke="#ffd078" stroke-width="10"/>
+  <g transform="rotate(5 256 250)" stroke="#193b70" stroke-width="9" stroke-linejoin="round">
+    <path d="M151 116h239c-15 12-22 29-22 49l-32 227H127l35-232c2-17-2-32-11-44z" fill="url(#paper)"/>
+    <path d="M151 116c23 2 34 19 31 45h208c4-24-4-40-23-45z" fill="#f0cb71"/>
+    <path d="M127 392h209c-15 12-21 28-18 48H107c-21 0-30-12-27-27 3-14 17-21 47-21z" fill="#f4d88c"/>
+    <path d="M318 440c-4-19 2-35 18-48" fill="none"/>
+  </g>
+  <g fill="#9b681d" font-family="Arial, sans-serif" text-anchor="middle">
+    <text x="262" y="169" font-size="29" font-weight="800">EXAM</text>
+    <text x="262" y="201" font-size="29" font-weight="800">RESULTS</text>
+    <text x="216" y="246" font-size="17" font-weight="700">SUBJECTS:</text>
+    <text x="210" y="283" font-size="17" font-weight="700">GRADES:</text>
+    <text x="211" y="320" font-size="17" font-weight="700">REMARKS:</text>
+    <text x="277" y="355" font-size="22" font-weight="800">GRADE A+</text>
+  </g>
+  <g fill="none" stroke="#b48528" stroke-width="7" stroke-linecap="round">
+    <path d="M304 236l10 10 19-22M304 273l10 10 19-22"/>
+    <path d="M342 236l10 10 19-22M342 273l10 10 19-22"/>
+    <path d="M175 216h178M174 297h174"/>
+    <path d="M184 342c15-23 7 15 23-3 10-11 4 15 27-2"/>
+  </g>
+  <g transform="translate(91 81)" stroke="#193b70" stroke-width="7" stroke-linejoin="round">
+    <path d="M36 64L20 112l23-12 15 23 13-51" fill="#244e99"/>
+    <circle cx="55" cy="48" r="42" fill="url(#gold)"/>
+    <circle cx="55" cy="48" r="30" fill="none" stroke="#be7c15"/>
+    <text x="55" y="58" fill="#8a5918" stroke="none" font-family="Arial, sans-serif" font-size="28" font-weight="800" text-anchor="middle">A+</text>
+  </g>
+  <g transform="translate(329 274)" stroke="#193b70" stroke-width="8" stroke-linejoin="round">
+    <path d="M37 7l-8-31 24 19 12-30 12 30 24-19-8 31" fill="#f4b72d"/>
+    <circle cx="65" cy="59" r="50" fill="url(#gold)"/>
+    <circle cx="65" cy="59" r="35" fill="none" stroke="#be7c15"/>
+    <text x="65" y="70" fill="#8a5918" stroke="none" font-family="Arial, sans-serif" font-size="32" font-weight="800" text-anchor="middle">A+</text>
+    <path d="M39 102v38h54v-38" fill="#267bd1"/>
+  </g>
+</svg>

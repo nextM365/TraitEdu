@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title">
+  <title id="title">Announcements</title>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff8a25"/>
+      <stop offset=".48" stop-color="#ff5b1f"/>
+      <stop offset=".49" stop-color="#278fe8"/>
+      <stop offset="1" stop-color="#1766c7"/>
+    </linearGradient>
+    <linearGradient id="horn" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffad28"/>
+      <stop offset="1" stop-color="#f04b18"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#172554" flood-opacity=".25"/>
+    </filter>
+  </defs>
+  <rect x="30" y="30" width="452" height="452" rx="108" fill="#fff" filter="url(#shadow)"/>
+  <rect x="43" y="43" width="426" height="426" rx="96" fill="url(#background)" stroke="#ffd37a" stroke-width="10"/>
+  <g stroke="#17376b" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M130 269c63-10 119-38 169-84l29 129c-61-18-125-20-191-6z" fill="#f8fbff"/>
+    <path d="M113 254l35-8 14 72-36 6c-19 3-36-9-39-28s8-37 26-42z" fill="#268ce8"/>
+    <path d="M292 179c22-5 49 21 59 62s-2 76-25 82c-22 5-49-21-59-62s2-76 25-82z" fill="url(#horn)"/>
+    <ellipse cx="301" cy="250" rx="17" ry="25" fill="#eef8ff"/>
+    <path d="M153 314l29 83 45-8-13-88" fill="#30a5e8"/>
+    <path d="M190 342l20 50" fill="none" stroke="#ffd65c"/>
+  </g>
+  <g fill="none" stroke="#fff" stroke-width="12" stroke-linecap="round">
+    <path d="M337 179c20 11 34 29 40 52"/>
+    <path d="M351 148c35 18 59 49 67 86"/>
+    <path d="M171 113c-43 19-72 55-83 99"/>
+    <path d="M195 142c-28 14-48 38-56 68"/>
+  </g>
+  <g transform="translate(286 325)">
+    <path d="M0 0h116v100H18L0 82z" fill="#fff" stroke="#17376b" stroke-width="9" stroke-linejoin="round"/>
+    <circle cx="29" cy="35" r="9" fill="#ff7a1c"/>
+    <path d="M49 30h42M49 48h35M23 68h69" stroke="#f07431" stroke-width="7" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(359 88)" stroke="#17376b" stroke-width="7" stroke-linejoin="round">
+    <rect width="74" height="67" rx="10" fill="#fff"/>
+    <path d="M0 20h74" fill="none"/>
+    <path d="M18 0v17M56 0v17" stroke-linecap="round"/>
+    <path d="M24 42l9 9 19-21" fill="none" stroke="#247cd4" stroke-linecap="round"/>
+  </g>
+</svg>
