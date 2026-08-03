@@ -31,18 +31,20 @@ import SettingsView from './components/SettingsView.tsx';
 import SpotlightView from './components/SpotlightView.tsx';
 import i18n from './i18n';
 
+const assetUrl = (path: string) => `${import.meta.env.BASE_URL}${path}`;
+
 const features = [
-  { label: 'Announcements', image: '/announcement-icon.svg' },
-  { label: 'Achievements', image: '/achievements-icon.svg' },
-  { label: 'Exam Results', image: '/exam-results-icon.svg' },
-  { label: 'Fee Payments', image: '/fee-payments-icon.svg' },
-  { label: 'Attendance', image: '/attendance-icon.svg' },
-  { label: 'Opinion Poll', image: '/opinion-poll-icon.svg' },
-  { label: 'Parent Concerns', image: '/parent-concerns-icon.svg' },
-  { label: 'Bus Tracking', image: '/bus-tracking-icon.svg' },
-  { label: 'Wellness', image: '/wellness-icon.svg' },
-  { label: 'Gate Pass', image: '/gate-pass-icon.svg' },
-  { label: 'Events & Gallery', image: '/events-gallery-icon.svg' },
+  { label: 'Announcements', image: assetUrl('announcement-icon.svg') },
+  { label: 'Achievements', image: assetUrl('achievements-icon.svg') },
+  { label: 'Exam Results', image: assetUrl('exam-results-icon.svg') },
+  { label: 'Fee Payments', image: assetUrl('fee-payments-icon.svg') },
+  { label: 'Attendance', image: assetUrl('attendance-icon.svg') },
+  { label: 'Opinion Poll', image: assetUrl('opinion-poll-icon.svg') },
+  { label: 'Parent Concerns', image: assetUrl('parent-concerns-icon.svg') },
+  { label: 'Bus Tracking', image: assetUrl('bus-tracking-icon.svg') },
+  { label: 'Wellness', image: assetUrl('wellness-icon.svg') },
+  { label: 'Gate Pass', image: assetUrl('gate-pass-icon.svg') },
+  { label: 'Events & Gallery', image: assetUrl('events-gallery-icon.svg') },
 ];
 
 const modules = [
