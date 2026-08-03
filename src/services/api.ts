@@ -127,7 +127,7 @@ export function fetchPlatformHierarchy(): Promise<PlatformHierarchy> {
 
 async function postPlatform<T>(path: string, body: Record<string, string>): Promise<T> {
   const token = window.localStorage.getItem('traitedu-token');
-  const response = await fetch(path, {
+  const response = await fetch(getApiUrl(path), {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
     body: JSON.stringify(body),

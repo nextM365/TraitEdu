@@ -4,45 +4,44 @@ const { Pool } = pg;
 
 const isProduction = process.env.NODE_ENV === 'production';
 
-// Determine connection options based on environment
 let connectionOptions;
 
-if (isProduction) {
-  // Production: Use Supabase
-  if (!process.env.SUPABASE_URL || !process.env.SUPABASE_SERVICE_ROLE_KEY) {
-    throw new Error('Supabase credentials not configured. Add SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY to .env for production.');
+if (process.env.DATABASE_URL) {
+  connectionOptions = {
+    connectionString: process.env.DATABASE_URL,
+    ssl: isProduction ? { rejectUnauthorized: false } : undefined,
+  };
+  console.log('Using PostgreSQL connection string');
+} else if (isProduction) {
+  if (!process.env.SUPABASE_URL || !process.env.SUPABASE_DB_PASSWORD) {
+    throw new Error('Production database credentials not configured. Add DATABASE_URL or SUPABASE_URL and SUPABASE_DB_PASSWORD.');
   }
 
   const supabaseUrl = new URL(process.env.SUPABASE_URL);
-  const supabaseHost = supabaseUrl.hostname;
-
   connectionOptions = {
-    host: supabaseHost,
-    port: 5432,
-    database: 'postgres',
-    user: 'postgres',
-    password: process.env.SUPABASE_SERVICE_ROLE_KEY,
+    host: process.env.SUPABASE_DB_HOST ?? `db.${supabaseUrl.hostname.replace('.supabase.co', '')}.supabase.co`,
+    port: Number(process.env.SUPABASE_DB_PORT ?? 5432),
+    database: process.env.SUPABASE_DB_NAME ?? 'postgres',
+    user: process.env.SUPABASE_DB_USER ?? 'postgres',
+    password: process.env.SUPABASE_DB_PASSWORD,
     ssl: { rejectUnauthorized: false },
   };
 
-  console.log(`🔗 Using Supabase for production: ${supabaseHost}`);
+  console.log('Using Supabase PostgreSQL host');
 } else {
-  // Development: Use local PostgreSQL
-  if (!process.env.DATABASE_PASSWORD && !process.env.DATABASE_URL) {
-    throw new Error('Database credentials not configured. Add DATABASE_PASSWORD or DATABASE_URL to .env for development.');
+  if (!process.env.DATABASE_PASSWORD) {
+    throw new Error('Database credentials not configured. Add DATABASE_URL or DATABASE_PASSWORD to .env for development.');
   }
 
-  connectionOptions = process.env.DATABASE_HOST
-    ? {
-        host: process.env.DATABASE_HOST,
-        port: Number(process.env.DATABASE_PORT ?? 5432),
-        database: process.env.DATABASE_NAME ?? 'traitedu',
-        user: process.env.DATABASE_USER ?? 'traitedu_app',
-        password: process.env.DATABASE_PASSWORD,
-      }
-    : { connectionString: process.env.DATABASE_URL };
+  connectionOptions = {
+    host: process.env.DATABASE_HOST ?? 'localhost',
+    port: Number(process.env.DATABASE_PORT ?? 5432),
+    database: process.env.DATABASE_NAME ?? 'traitedu',
+    user: process.env.DATABASE_USER ?? 'traitedu_app',
+    password: process.env.DATABASE_PASSWORD,
+  };
 
-  console.log('🔗 Using local PostgreSQL for development');
+  console.log('Using local PostgreSQL for development');
 }
 
 const pool = new Pool({
