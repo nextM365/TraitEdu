@@ -12,8 +12,8 @@ export default function Performance({ metrics }: PerformanceProps) {
       </div>
       <div className="performance-grid">
         {metrics.map(metric => (
-          <div key={metric.label} className="performance-card">
-            <strong>{metric.label}</strong>
+          <div key={metric.title} className="performance-card">
+            <strong>{metric.title}</strong>
             <p>{metric.value}</p>
           </div>
         ))}
