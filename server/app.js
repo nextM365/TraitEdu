@@ -14,7 +14,18 @@ import { requireAuth } from './middleware/auth.js';
 
 const app = express();
 
-app.use(cors());
+// CORS configuration for production
+const allowedOrigins = process.env.NODE_ENV === 'production'
+  ? (process.env.ALLOWED_ORIGINS || 'http://localhost:5173').split(',').map(o => o.trim())
+  : ['http://localhost:5173', 'http://localhost:3000'];
+
+app.use(cors({
+  origin: allowedOrigins,
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+}));
+
 app.use(express.json());
 app.use('/api/health', healthRouter);
 app.use('/api/auth', authRouter);

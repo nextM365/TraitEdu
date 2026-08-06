@@ -1,0 +1,41 @@
+# Frontend files - not needed for backend deployment
+src
+components
+public
+dist
+*.html
+index.html
+index.tsx
+index.ts
+main.tsx
+main.ts
+main.js
+script.js
+styles.css
+vite.config.js
+tsconfig.json
+
+# Dev/Build files
+node_modules
+.git
+.env
+.env.local
+.env.*.local
+*.log
+.DS_Store
+
+# Docs
+*.md
+DEPLOYMENT_*
+README.md
+
+# CI/CD
+.github
+.gitlab-ci.yml
+.circleci
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
